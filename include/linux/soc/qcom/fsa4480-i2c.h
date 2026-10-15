@@ -13,6 +13,8 @@ enum fsa_function {
 	FSA_USBC_ORIENTATION_CC1,
 	FSA_USBC_ORIENTATION_CC2,
 	FSA_USBC_DISPLAYPORT_DISCONNECTED,
+	FSA_USBC_SBU_LPD_SENSE,
+	FSA_USBC_SBU_LPD_ISOLATE,
 	FSA_EVENT_MAX,
 };
 
@@ -44,4 +46,3 @@ static inline int fsa4480_unreg_notifier(struct notifier_block *nb,
 #endif /* CONFIG_QCOM_FSA4480_I2C */
 
 #endif /* FSA4480_I2C_H */
-

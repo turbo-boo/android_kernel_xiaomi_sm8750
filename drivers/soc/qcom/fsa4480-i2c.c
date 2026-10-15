@@ -299,6 +299,12 @@ int fsa4480_switch_event(struct device_node *node,
 	case FSA_USBC_DISPLAYPORT_DISCONNECTED:
 		fsa4480_usbc_update_settings(fsa_priv, 0x18, 0x98);
 		break;
+	case FSA_USBC_SBU_LPD_SENSE:
+		fsa4480_usbc_update_settings(fsa_priv, 0x19, 0xd9);
+		break;
+	case FSA_USBC_SBU_LPD_ISOLATE:
+		fsa4480_usbc_update_settings(fsa_priv, 0x78, 0xd9);
+		break;
 	default:
 		break;
 	}
