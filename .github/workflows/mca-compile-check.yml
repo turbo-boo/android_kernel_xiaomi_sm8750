@@ -1,0 +1,257 @@
+name: MCA compile check
+
+on:
+  push:
+    branches:
+      - mca-port-dada
+  pull_request:
+    paths:
+      - 'drivers/power/supply/mca/**'
+      - 'drivers/power/supply/Kconfig'
+      - 'drivers/power/supply/Makefile'
+      - 'drivers/misc/hwid/**'
+      - 'tools/testing/selftests/mca/**'
+      - '.github/workflows/mca-compile-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  compile-mca:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test JEITA and BASP policy boundaries
+        run: |
+          cc -Wall -Wextra -Werror -fsanitize=address,undefined \
+            -o /tmp/jeita-policy-test tools/testing/selftests/mca/jeita_policy_test.c
+          /tmp/jeita-policy-test
+          cc -Wall -Wextra -Werror -fsanitize=address,undefined \
+            -o /tmp/basp-wire-test tools/testing/selftests/mca/basp_wire_test.c
+          /tmp/basp-wire-test
+          python3 tools/testing/selftests/mca/verify_dada_port.py
+
+      - name: Install kernel build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang lld llvm make bc bison flex libssl-dev libelf-dev dwarves
+
+      - name: Test compiled AArch64 wire argument recovery
+        run: python3 tools/testing/selftests/mca/wire_contract_test.py
+
+      - name: Configure arm64 kernel for MCA
+        run: |
+          make O=out ARCH=arm64 LLVM=1 defconfig
+          scripts/config --file out/.config \
+            -e MODULES \
+            -e POWER_SUPPLY \
+            -m MI_HARDWARE_ID \
+            -m XM_POWER_SUPPLY \
+            -m MCA_PROTOCOL_PD \
+            -m MCA_PROTOCOL_QC \
+            -m MCA_EXTERNAL_FG \
+            -m MCA_EXTERNAL_CP \
+            -m MCA_EXTERNAL_WIRELESS \
+            -m MCA_EXTERNAL_BOOST \
+            -m MCA_QCOM_ADSP \
+            -m MCA_QCOM_SUBPMIC \
+            -m QTI_PMIC_GLINK \
+            -m MCA_QCOM_SMEM \
+            -m MCA_QCOM_SYSFS \
+            -m MCA_QCOM_PANEL \
+            -m CHARGER_PARTITION \
+            -e MHI_BUS_MISC \
+            -e IPC_LOGGING \
+            -e ANDROID_VENDOR_HOOKS \
+            -e ANDROID_VENDOR_OEM_DATA \
+            -m QCOM_FSA4480_I2C \
+            -m PHY_QCOM_UFS \
+            -e QCOM_IOMMU_UTIL \
+            -d QCOM_Q6V5_MSS \
+            -d FSL_ENETC \
+            -d FSL_ENETC_VF \
+            -d FSL_ENETC_CORE \
+            -d MLX5_CORE \
+            -d INTERCONNECT_QCOM
+          # The vendor headers no longer support the legacy upstream ICC nodes;
+          # CoreSight USB also requires a QDSS header outside this source release.
+          # ENETC/MLX5 diagnostics exceed their fortified netlink buffers.
+          scripts/config --file out/.config -d CORESIGHT
+          for symbol in $(sed -n 's/^CONFIG_\(INTERCONNECT_QCOM[^=]*\)=.*/\1/p' out/.config); do
+            scripts/config --file out/.config -d "$symbol"
+          done
+          make O=out ARCH=arm64 LLVM=1 olddefconfig
+          grep -E 'CONFIG_(MI_HARDWARE_ID|XM_POWER_SUPPLY|MCA_PROTOCOL_PD|MCA_PROTOCOL_QC|MCA_EXTERNAL_FG|MCA_EXTERNAL_CP|MCA_EXTERNAL_WIRELESS|MCA_EXTERNAL_BOOST|MCA_QCOM_ADSP|MCA_QCOM_SUBPMIC|MCA_QCOM_SMEM|MCA_QCOM_SYSFS|MCA_QCOM_PANEL|CHARGER_PARTITION)=' out/.config
+          echo '--- wireless strategy Kbuild ---'
+          cat drivers/power/supply/mca/mca_strategy/Makefile
+          cat drivers/power/supply/mca/mca_strategy/strategy_wireless/Makefile
+
+      - name: Prepare kernel tree
+        run: |
+          make -j2 O=out ARCH=arm64 LLVM=1 prepare modules_prepare
+
+      - name: Compile HWID module
+        run: |
+          make -j2 O=out ARCH=arm64 LLVM=1 \
+            KBUILD_MODPOST_WARN=1 \
+            M=drivers/misc/hwid modules
+
+      - name: Compile MCA modules
+        id: mca_compile
+        shell: bash
+        run: |
+          set +e
+          make -j2 O=out ARCH=arm64 LLVM=1 \
+            KBUILD_MODPOST_WARN=1 \
+            M=drivers/power/supply/mca modules 2>&1 | tee mca-build.log
+          status=${PIPESTATUS[0]}
+          grep -n -m 80 -E '(^|[[:space:]])(error:|fatal error:)|undefined reference|No rule to make target|implicit declaration|incompatible (function|pointer|integer)|undeclared' mca-build.log > mca-errors.txt || true
+          if [ ! -s mca-errors.txt ] && [ "$status" -ne 0 ]; then
+            tail -n 200 mca-build.log > mca-errors.txt
+          fi
+          exit "$status"
+
+      - name: Compile wireless strategy subtree
+        id: wireless_compile
+        shell: bash
+        run: |
+          set +e
+          make -j2 O=out ARCH=arm64 LLVM=1 \
+            KBUILD_MODPOST_WARN=1 \
+            M=drivers/power/supply/mca/mca_strategy/strategy_wireless modules 2>&1 | tee wireless-build.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -n -m 80 -E '(^|[[:space:]])(error:|fatal error:)|undefined reference|No rule to make target|implicit declaration|incompatible (function|pointer|integer)|undeclared' wireless-build.log >> mca-errors.txt || true
+            if [ ! -s mca-errors.txt ]; then
+              tail -n 200 wireless-build.log > mca-errors.txt
+            fi
+          fi
+          exit "$status"
+
+      - name: Link full kernel and modules with resolved symbols
+        id: kernel_link
+        shell: bash
+        run: |
+          set +e
+          make -j"$(nproc)" O=out ARCH=arm64 LLVM=1 Image modules 2>&1 | tee kernel-build.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -n -m 80 -E '(error:|fatal error:|ERROR:)|undefined reference|No rule to make target' kernel-build.log > mca-errors.txt || true
+            if [ ! -s mca-errors.txt ]; then
+              tail -n 200 kernel-build.log > mca-errors.txt
+            fi
+          fi
+          exit "$status"
+
+      - name: Verify packaged modules and compiled Dada bindings
+        run: |
+          python3 tools/testing/selftests/mca/verify_dada_port.py --kernel-out out
+          python3 tools/testing/selftests/mca/verify_stock_contract.py --kernel-out out
+
+      - name: Assert restored MCA layers and stock module names
+        if: success()
+        run: |
+          test -f out/drivers/power/supply/mca/mca_qcom_subpmic_proxy/mca_qcom_subpmic_proxy.o
+          test -f out/drivers/power/supply/mca/mca_shared_memory/charger_partition.o
+          test -f out/drivers/power/supply/mca/mca_smart_charge/mca_smart_charge.o
+          test -f out/drivers/power/supply/mca/mca_common/mca_charge_mievent.o
+          test -f out/drivers/power/supply/mca/mca_common/mca_charge_interface.o
+          test -f out/drivers/power/supply/mca/mca_common/mca_qcom_smem.o
+          test -f out/drivers/power/supply/mca/mca_common/mca_qcom_panel.o
+          test -f out/drivers/power/supply/mca/mca_qcom_sysfs/mca_qcom_sysfs.o
+          test -f out/drivers/power/supply/mca/mca_platform/mca_platform_loadsw_class.o
+          test -f out/drivers/power/supply/mca/mca_platform/mca_platform_wireless_class.o
+          test -f out/drivers/power/supply/mca/mca_hardware_ic/wireless_ic/nuvolta_1652/nuvolta_1652.o
+          test -f out/drivers/power/supply/mca/mca_hardware_ic/boost_ic/hl7603/hl7603.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_vbat_ovp_monitor.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_ibat_ocp_monitor.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_lpd_detect.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_path_control.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_bmd.o
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_connector_antiburn.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_jeita/mca_buckchg_jeita.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_pd_auth/mca_pd_auth.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_soc_limit/mca_soc_limit.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_thermal/mca_charger_thermal.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_buckchg/mca_strategy_buckchg.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_fg/mca_soc_smooth.o
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_fg/mca_battery_shutdown.o
+          test -f out/drivers/power/supply/mca/mca_business/business_charger/mca_charger_usb_psy.o
+          test -f out/drivers/power/supply/mca/mca_business/business_charger/mca_charger_wireless_psy.o
+          test -f out/drivers/power/supply/mca/mca_business/business_battery/mca_battery_psy.o
+          test -f out/drivers/power/supply/mca/mca_business/business_misc/mca_business_misc.o
+          test -f out/drivers/power/supply/mca/mca_business/business_misc/mca_business_votable.o
+
+          # Stock Dada module filenames expected by modules.dep / userspace.
+          test -f out/drivers/power/supply/mca/mca_common/mca_log.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_fg/mca_strategy_fg_comp.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_quickchg/mca_strategy_quickchg.ko
+          test -f out/drivers/power/supply/mca/mca_business/business_battery/mca_business_battery_comp.ko
+          test -f out/drivers/power/supply/mca/mca_business/business_charger/mca_business_charger_comp.ko
+          test -f out/drivers/power/supply/mca/mca_business/business_misc/mca_business_misc_comp.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_thermal/mca_charger_thermal.ko
+          test -f out/drivers/power/supply/mca/mca_hardware_monitor/mca_connector_antiburn.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_wireless/mca_basic_wireless.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_wireless/mca_quick_wireless.ko
+          test -f out/drivers/power/supply/mca/mca_strategy/strategy_wireless/mca_wireless_revchg.ko
+          test ! -f out/drivers/power/supply/mca/mca_strategy/strategy_wireless/mca_wireless_class_compat.ko
+
+          find out/drivers/power/supply/mca -type f \( \
+            -name 'mca_log.ko' -o \
+            -name 'mca_strategy_fg_comp.ko' -o \
+            -name 'mca_strategy_quickchg.ko' -o \
+            -name 'mca_business_battery_comp.ko' -o \
+            -name 'mca_business_charger_comp.ko' -o \
+            -name 'mca_business_misc_comp.ko' -o \
+            -name 'mca_charger_thermal.ko' -o \
+            -name 'mca_connector_antiburn.ko' -o \
+            -name 'mca_basic_wireless.ko' -o \
+            -name 'mca_quick_wireless.ko' -o \
+            -name 'mca_wireless_revchg.ko' -o \
+            -name 'nuvolta_1652.o' -o \
+            -name 'hl7603.o' -o \
+            -name 'mca_vbat_ovp_monitor.o' -o \
+            -name 'mca_ibat_ocp_monitor.o' -o \
+            -name 'mca_lpd_detect.o' -o \
+            -name 'mca_path_control.o' -o \
+            -name 'mca_bmd.o' \) -print
+
+      - name: Report compiler diagnostics to draft PR
+        if: failure() && (steps.mca_compile.outcome == 'failure' || steps.wireless_compile.outcome == 'failure' || steps.kernel_link.outcome == 'failure')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let diag = 'Compiler failed without captured diagnostics.';
+            if (fs.existsSync('mca-errors.txt')) {
+              diag = fs.readFileSync('mca-errors.txt', 'utf8').trim();
+            }
+            if (diag.length > 12000) diag = diag.slice(0, 12000);
+            const marker = '<!-- mca-compile-diagnostics -->';
+            const body = `${marker}\nMCA compile diagnostics for \`${context.sha.slice(0, 12)}\`:\n\n\`\`\`text\n${diag}\n\`\`\``;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 1,
+              per_page: 100,
+            });
+            const old = comments.find(c => c.user.type === 'Bot' && c.body?.includes(marker));
+            if (old) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: old.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: 1,
+                body,
+              });
+            }

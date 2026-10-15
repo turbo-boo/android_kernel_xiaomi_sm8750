@@ -1,0 +1,57 @@
+name: MCA sub-PMIC compile check
+
+on:
+  push:
+    branches:
+      - mca-port-dada
+    paths:
+      - 'drivers/power/supply/mca/**'
+      - 'drivers/misc/hwid/**'
+      - '.github/workflows/mca-subpmic-compile-check.yml'
+  workflow_dispatch:
+
+jobs:
+  compile-mca-subpmic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kernel build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang lld llvm make bc bison flex libssl-dev libelf-dev dwarves
+
+      - name: Configure arm64 kernel for wired MCA
+        run: |
+          make O=out ARCH=arm64 LLVM=1 defconfig
+          scripts/config --file out/.config \
+            -e MODULES \
+            -e POWER_SUPPLY \
+            -m MI_HARDWARE_ID \
+            -m XM_POWER_SUPPLY \
+            -m MCA_PROTOCOL_PD \
+            -m MCA_PROTOCOL_QC \
+            -m MCA_EXTERNAL_FG \
+            -m MCA_EXTERNAL_CP \
+            -m MCA_QCOM_ADSP \
+            -m MCA_QCOM_SUBPMIC
+          make O=out ARCH=arm64 LLVM=1 olddefconfig
+          grep -E 'CONFIG_(XM_POWER_SUPPLY|MCA_QCOM_SUBPMIC|MCA_QCOM_ADSP|MCA_EXTERNAL_FG|MCA_EXTERNAL_CP)=' out/.config
+
+      - name: Prepare kernel tree
+        run: |
+          make -j2 O=out ARCH=arm64 LLVM=1 prepare modules_prepare
+
+      - name: Compile wired MCA modules
+        shell: bash
+        run: |
+          set -o pipefail
+          make -j2 O=out ARCH=arm64 LLVM=1 \
+            KBUILD_MODPOST_WARN=1 \
+            M=drivers/power/supply/mca modules 2>&1 | tee mca-subpmic-build.log
+
+      - name: Assert Qualcomm sub-PMIC was compiled
+        run: |
+          test -f out/drivers/power/supply/mca/mca_qcom_subpmic_proxy/mca_qcom_subpmic_proxy.o
+          ls -l out/drivers/power/supply/mca/mca_qcom_subpmic_proxy/

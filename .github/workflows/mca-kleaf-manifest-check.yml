@@ -1,0 +1,115 @@
+name: MCA Kleaf manifest check
+
+on:
+  push:
+    branches:
+      - mca-port-dada
+  pull_request:
+    paths:
+      - 'dada.bzl'
+      - 'sun.bzl'
+      - 'drivers/power/supply/mca/**/Makefile'
+      - '.github/workflows/mca-kleaf-manifest-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-dada-mca-manifest:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inherited MCA module outputs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from collections import Counter
+          from pathlib import Path
+          import re
+          import sys
+
+          sun_text = Path('sun.bzl').read_text()
+          dada_text = Path('dada.bzl').read_text()
+
+          sun_modules = re.findall(
+              r'"(drivers/power/supply/mca/[^"\n]+\.ko)"',
+              sun_text,
+          )
+          replacements = dict(re.findall(
+              r'^\s*"(drivers/power/supply/mca/[^"\n]+\.ko)"\s*:\s*'
+              r'"(drivers/power/supply/mca/[^"\n]+\.ko)"\s*,?$',
+              dada_text,
+              re.MULTILINE,
+          ))
+
+          extra_match = re.search(
+              r'_dada_mca_extra_modules\s*=\s*\[(.*?)\]\s*',
+              dada_text,
+              re.DOTALL,
+          )
+          if not extra_match:
+              raise SystemExit('dada.bzl: _dada_mca_extra_modules not found')
+          extras = re.findall(
+              r'"(drivers/power/supply/mca/[^"\n]+\.ko)"',
+              extra_match.group(1),
+          )
+
+          effective = [replacements.get(module, module) for module in sun_modules]
+          effective.extend(extras)
+
+          errors = []
+          duplicates = sorted(
+              module for module, count in Counter(effective).items() if count > 1
+          )
+          if duplicates:
+              errors.append('duplicate effective MCA modules: ' + ', '.join(duplicates))
+
+          required_extras = {
+              'drivers/power/supply/mca/mca_hardware_monitor/mca_ibat_ocp_monitor.ko',
+              'drivers/power/supply/mca/mca_platform/mca_platform_loadsw_class.ko',
+          }
+          missing_extras = sorted(required_extras.difference(effective))
+          if missing_extras:
+              errors.append('missing reconstructed MCA modules: ' + ', '.join(missing_extras))
+
+          for old, new in replacements.items():
+              if old not in sun_modules:
+                  errors.append(f'stale Dada replacement key not inherited from sun.bzl: {old}')
+              if old == new:
+                  errors.append(f'identity Dada replacement is unnecessary: {old}')
+
+          for module in effective:
+              module_path = Path(module)
+              makefile = module_path.parent / 'Makefile'
+              if not makefile.is_file():
+                  errors.append(f'no Makefile for packaged module: {module}')
+                  continue
+
+              output_obj = module_path.with_suffix('.o').name
+              make_text = makefile.read_text().replace('\\\n', ' ')
+              output_declared = False
+              for line in make_text.splitlines():
+                  stripped = line.split('#', 1)[0].strip()
+                  if '+=' not in stripped or not stripped.startswith('obj-'):
+                      continue
+                  rhs = stripped.split('+=', 1)[1].split()
+                  if output_obj in rhs:
+                      output_declared = True
+                      break
+              if not output_declared:
+                  errors.append(
+                      f'packaged module is not an obj-* output of {makefile}: {module}'
+                  )
+
+          if errors:
+              print('Dada MCA Kleaf manifest validation failed:', file=sys.stderr)
+              for error in errors:
+                  print(f'  - {error}', file=sys.stderr)
+              raise SystemExit(1)
+
+          print(f'validated {len(effective)} Dada MCA module outputs')
+          print(f'applied {len(replacements)} inherited path replacements')
+          print(f'added {len(extras)} Dada-only reconstructed modules')
+          PY
