@@ -7,4 +7,10 @@ if XM_POWER_SUPPLY
 config MCA_QCOM_ADSP
 	tristate "MCA Qualcomm ADSP glink support"
 
+config MCA_QCOM_SMEM
+	tristate "MCA Qualcomm shared memory support"
+
+config MCA_QCOM_PANEL
+	tristate "MCA Qualcomm panel notifier support"
+
 endif # XM_POWER_SUPPLY
