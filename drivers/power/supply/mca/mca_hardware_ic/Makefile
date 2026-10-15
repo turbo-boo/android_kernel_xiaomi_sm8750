@@ -1,1 +1,2 @@
+obj-$(CONFIG_MCA_EXTERNAL_CP) += charge_pump_ic/
 obj-$(CONFIG_MCA_EXTERNAL_BOOST) += boost_ic/
