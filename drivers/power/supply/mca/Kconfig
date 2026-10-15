@@ -4,4 +4,7 @@
 
 if XM_POWER_SUPPLY
 
+config MCA_QCOM_ADSP
+	tristate "MCA Qualcomm ADSP glink support"
+
 endif # XM_POWER_SUPPLY
