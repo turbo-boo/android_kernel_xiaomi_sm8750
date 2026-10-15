@@ -6,3 +6,4 @@ obj-$(CONFIG_XM_POWER_SUPPLY) += mca_shared_memory/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_platform/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_protocol/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_strategy/
+obj-$(CONFIG_XM_POWER_SUPPLY) += mca_smart_charge/
