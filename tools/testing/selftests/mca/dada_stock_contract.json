@@ -1,0 +1,1670 @@
+{
+  "repository": "https://dumps.tadiphone.dev/dumps/xiaomi/dada",
+  "commit": "1125d12771fff547cad324aa7cd3961cd9156489",
+  "branch": "missi-user-15-AQ3A.240812.002-OS2.0.101.0.VOCCNXM-release-keys",
+  "vermagic": "6.6.30-android15-8-g48bbe4889b2a-dirty-4k SMP preempt mod_unload modversions aarch64",
+  "modules": [
+    {
+      "name": "bq27z561.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/bq27z561.ko",
+      "blob": "6b31b0fc6711f64ae458544dfa67c52e916a5d73",
+      "sha256": "1774a80eec6553b8a14e3e4a2842d2fa54e341f1741d1c0fe46d6e6b3e09a0ea",
+      "exports": [],
+      "aliases": [
+        "i2c:bq27z561_master",
+        "i2c:bq27z561_slave",
+        "i2c:bq28z610",
+        "of:N*T*Cti,bq27z561_master",
+        "of:N*T*Cti,bq27z561_masterC*",
+        "of:N*T*Cti,bq27z561_slave",
+        "of:N*T*Cti,bq27z561_slaveC*",
+        "of:N*T*Cti,bq28z610",
+        "of:N*T*Cti,bq28z610C*"
+      ]
+    },
+    {
+      "name": "charger_partition.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/charger_partition.ko",
+      "blob": "3b0c3b7a0fc92617c745b65829a6190753762295",
+      "sha256": "124e91514c254cffcd97e44a2482a8e44bafc60e691c94213fd686653f445efc",
+      "exports": [
+        "charger_partition_alloc",
+        "charger_partition_dealloc",
+        "charger_partition_get_eu_model",
+        "charger_partition_read",
+        "charger_partition_write"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "hl7603.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/hl7603.ko",
+      "blob": "83016529148df0b2f4105b46634c949defe47993",
+      "sha256": "a7d5478b6e3c65568d28ba5ac8e81e0bb38180595a1484199284a0e64b07c8e6",
+      "exports": [],
+      "aliases": [
+        "of:N*T*Chl7603",
+        "of:N*T*Chl7603C*"
+      ]
+    },
+    {
+      "name": "mca_adsp_glink.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_adsp_glink.ko",
+      "blob": "836f814f924c035a6ee569a3ad68424e04b6047e",
+      "sha256": "a3e02a3634f40cb7594a4d0372115f56e3300356e9ac94b2103aca7d8cb7a22e",
+      "exports": [
+        "mca_adsp_glink_read_prop",
+        "mca_adsp_glink_resister_ops",
+        "mca_adsp_glink_write_prop"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_basic_wireless.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_basic_wireless.ko",
+      "blob": "df058f6448a6fa33b920f75bda8c2b7e18cbba70",
+      "sha256": "214612f6b36bf2f1724c7a9611f361b3a6d280ca83c3fe73abd4f67418079e42",
+      "exports": [
+        "strategy_class_wireless_op_get_rx_iout_limit",
+        "strategy_class_wireless_ops_get_adapter_charger_mode",
+        "strategy_class_wireless_ops_get_adapter_power",
+        "strategy_class_wireless_ops_get_wls_type",
+        "strategy_class_wireless_ops_set_parallel_charge"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_bmd.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_bmd.ko",
+      "blob": "31649f11bdb0df69f0af6ed3115d3fad91f4d57b",
+      "sha256": "fc497f56eb04bb0e7bbe5b5e3cfe413fb3840d90700e2ba6d4297c5f78f9ed51",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_buckchg_jeita.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_buckchg_jeita.ko",
+      "blob": "3830414acc3e76670f7d5909f6fed5824e09b5e1",
+      "sha256": "49e330a67be481c4efc34a2a61ec7fde92e51a4e60fa57e27bbb39027b9e90b9",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_business_battery_comp.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_business_battery_comp.ko",
+      "blob": "73752338165ee9b3cc55baabb9bdf422e08edde6",
+      "sha256": "1b81d815171426d4e6cabbb39ad0f3c3da57f5c7747521277b76480583cd9ae1",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_business_charger_comp.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_business_charger_comp.ko",
+      "blob": "e1bab75629e1d0127a5602d18445443459ba2311",
+      "sha256": "d0fdf3ef0acd690862e050dfbb73ab929f30387280f59595322190f12c344e0f",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_business_misc_comp.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_business_misc_comp.ko",
+      "blob": "fdf56fc9627a7b1ba9c27247a1031c66109caeb4",
+      "sha256": "e020fd4ccae97ca7229b6ae0353303c16f15fe999538d9de5417b753a70dfab6",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_charge_interface.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_charge_interface.ko",
+      "blob": "4b76fdf771fa4991a9a8e97db9886ab87d9c92f0",
+      "sha256": "e5bb8ad8fd8b930e92129e28e63a74263e0c764698de185b72fa3eca387572f0",
+      "exports": [
+        "mca_charge_if_ops_register"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_charge_mievent.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_charge_mievent.ko",
+      "blob": "182019874da128ba2f7217dc7f9985c6ae868d26",
+      "sha256": "d01a52e7f29d7733548c3788e1cb9788304baf27455728975312d9d01d65056a",
+      "exports": [
+        "mca_charge_mievent_report",
+        "mca_charge_mievent_set_state"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_charger_thermal.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_charger_thermal.ko",
+      "blob": "d08b8d4263338f3c6c4cfbe217c42f3fc3866ffe",
+      "sha256": "2fd562f1f55a3cb7db1bec2f7053d81bf0e5c1be84560d7c93e9c58fdde25861",
+      "exports": [
+        "mca_get_wls_charger_thermal_remove",
+        "mca_set_wls_charger_thermal_remove"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_common.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_common.ko",
+      "blob": "72b243d3a17bdd734d9778cae12042b2e6391000",
+      "sha256": "62ff21b224e2104b486ef6671779356339c17740ffa561d6b2c41554a1f88fed",
+      "exports": [
+        "mca_create_votable",
+        "mca_destroy_votable",
+        "mca_find_votable",
+        "mca_get_client_vote",
+        "mca_get_client_vote_locked",
+        "mca_get_effective_client",
+        "mca_get_effective_client_locked",
+        "mca_get_effective_result",
+        "mca_get_effective_result_locked",
+        "mca_is_client_vote_enabled",
+        "mca_is_client_vote_enabled_locked",
+        "mca_is_override_vote_enabled",
+        "mca_is_override_vote_enabled_locked",
+        "mca_lock_votable",
+        "mca_rerun_election",
+        "mca_unlock_votable",
+        "mca_vote",
+        "mca_vote_override"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_connector_antiburn.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_connector_antiburn.ko",
+      "blob": "ceabc898d0df10049cbe6ea425548710a96b3758",
+      "sha256": "6fa53319f7380276035d35520fcbbca13d5b088e3e1ae2da61eff6df626a50cf",
+      "exports": [
+        "connector_antiburn_is_triggered"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_event.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_event.ko",
+      "blob": "2992f8ac967cfb1f4215c6e097941bac9330c116",
+      "sha256": "f250bd7d85f8810f913eb06fcdbef4373200bf43b63a1784a315581fd68179fe",
+      "exports": [
+        "mca_event_block_notify",
+        "mca_event_block_notify_register",
+        "mca_event_block_notify_unregister",
+        "mca_event_report_uevent"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_hwid.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_hwid.ko",
+      "blob": "a3a6f34bfaafc9ce3d13223f3a3c3e80d7b1c7f6",
+      "sha256": "9bff739646a8c966f9d9d388a492c4d269b9236dfcdc5c938a64bcccd34344b2",
+      "exports": [
+        "mca_get_hwid_info"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_log.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_log.ko",
+      "blob": "6735aa633dbf0db559cd93c1487dd99fa8b45aa7",
+      "sha256": "db52084df0963597f5b588cf1302bbf3061a447be528ecee15cda917aa544ce2",
+      "exports": [
+        "__mca_log_debug",
+        "__mca_log_err",
+        "__mca_log_info",
+        "mca_log_charge_log_register",
+        "mca_log_get_charge_boot_mode"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_lpd_detect.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_lpd_detect.ko",
+      "blob": "fec1c577f63f6db64898b6ded8e4b97ae699532e",
+      "sha256": "1d08ee076bd21d62692fc3a3a6e3f946a549a8b452bfc2d1743df6e8f68e30d6",
+      "exports": [
+        "lpd_is_charging_limit"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_parse_dts.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_parse_dts.ko",
+      "blob": "f437949ac73dd9079883de70e946490db6fcfb13",
+      "sha256": "4234a13b8b95baf0565f34e8f0eb26f71be53290b5c1b05d98a2b8114579bff2",
+      "exports": [
+        "mca_parse_dts_count_strings",
+        "mca_parse_dts_string",
+        "mca_parse_dts_string_array",
+        "mca_parse_dts_string_index",
+        "mca_parse_dts_u32",
+        "mca_parse_dts_u32_array",
+        "mca_parse_dts_u32_count",
+        "mca_parse_dts_u32_index",
+        "mca_parse_dts_u8",
+        "mca_parse_dts_u8_array",
+        "mca_parse_dts_u8_count"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_path_control.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_path_control.ko",
+      "blob": "394e405e57b717ea876ee9e0de2ec8ba167b4441",
+      "sha256": "7cd223830646922963b0ad707388d075a535d56f6874ccbc6e39a8e535939f2d",
+      "exports": [
+        "mca_path_control_enable_gate"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_pd_auth.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_pd_auth.ko",
+      "blob": "db2c05c70f7dee110093fba2679724273196e055",
+      "sha256": "3d41133d7d7fc3b289763fdd15e3e898f09cc934033ab4436b859853dd20a690",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_base.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_base.ko",
+      "blob": "a7754e421322645858adb26cfe8e93792674f8b0",
+      "sha256": "f71d215e4533a84f7f1068f9fecb7f7cb4e65f82cc2d5dae022aa55208bdf55a",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_bc12_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_bc12_class.ko",
+      "blob": "0970f9be57b56dd3d9cfa676af514a88ebe6b03c",
+      "sha256": "d9d630fa0e4d7e058c25930a1c6910d53c245fa27fc84bf57eebc7e8df39f6bb",
+      "exports": [
+        "platform_bc12_class_ops_register"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_buckchg_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_buckchg_class.ko",
+      "blob": "a256d6f379e694ffef73a2ed66d8a4adf9e53826",
+      "sha256": "46ff59e98902bf516e66e60e6653b3107b000d73429420ff538f72992d177ce2",
+      "exports": [
+        "platform_class_buckchg_is_init_ok",
+        "platform_class_buckchg_ops_adc_enable",
+        "platform_class_buckchg_ops_enable_hvdcp",
+        "platform_class_buckchg_ops_force_dpdm",
+        "platform_class_buckchg_ops_get_ac_volt",
+        "platform_class_buckchg_ops_get_batt_curr",
+        "platform_class_buckchg_ops_get_batt_id",
+        "platform_class_buckchg_ops_get_batt_tsns",
+        "platform_class_buckchg_ops_get_batt_volt",
+        "platform_class_buckchg_ops_get_batt_volt_sns",
+        "platform_class_buckchg_ops_get_bus_curr",
+        "platform_class_buckchg_ops_get_bus_tsns",
+        "platform_class_buckchg_ops_get_bus_volt",
+        "platform_class_buckchg_ops_get_chg_status",
+        "platform_class_buckchg_ops_get_chg_type",
+        "platform_class_buckchg_ops_get_die_temp",
+        "platform_class_buckchg_ops_get_hiz_status",
+        "platform_class_buckchg_ops_get_input_curr_lmt",
+        "platform_class_buckchg_ops_get_input_volt_lmt",
+        "platform_class_buckchg_ops_get_lpd_cc1",
+        "platform_class_buckchg_ops_get_lpd_cc2",
+        "platform_class_buckchg_ops_get_lpd_control",
+        "platform_class_buckchg_ops_get_lpd_dm",
+        "platform_class_buckchg_ops_get_lpd_dp",
+        "platform_class_buckchg_ops_get_lpd_enable",
+        "platform_class_buckchg_ops_get_lpd_sbu1",
+        "platform_class_buckchg_ops_get_lpd_sbu2",
+        "platform_class_buckchg_ops_get_lpd_status",
+        "platform_class_buckchg_ops_get_lpd_uart_control",
+        "platform_class_buckchg_ops_get_online",
+        "platform_class_buckchg_ops_get_otg_boost_src",
+        "platform_class_buckchg_ops_get_otg_enable_status",
+        "platform_class_buckchg_ops_get_otg_plugin_status",
+        "platform_class_buckchg_ops_get_otg_status",
+        "platform_class_buckchg_ops_get_pack_vbat",
+        "platform_class_buckchg_ops_get_ship_mode",
+        "platform_class_buckchg_ops_get_sys_volt",
+        "platform_class_buckchg_ops_get_term_curr",
+        "platform_class_buckchg_ops_get_term_volt",
+        "platform_class_buckchg_ops_get_usb_aicl_cont_thd",
+        "platform_class_buckchg_ops_get_usb_sns_volt",
+        "platform_class_buckchg_ops_get_wls_curr",
+        "platform_class_buckchg_ops_is_charge_done",
+        "platform_class_buckchg_ops_is_support_cid",
+        "platform_class_buckchg_ops_kick_wd",
+        "platform_class_buckchg_ops_register",
+        "platform_class_buckchg_ops_request_dpdm",
+        "platform_class_buckchg_ops_set_aicl_enable",
+        "platform_class_buckchg_ops_set_boost_enable",
+        "platform_class_buckchg_ops_set_boost_voltage",
+        "platform_class_buckchg_ops_set_chg",
+        "platform_class_buckchg_ops_set_eu_model",
+        "platform_class_buckchg_ops_set_hiz",
+        "platform_class_buckchg_ops_set_ichg",
+        "platform_class_buckchg_ops_set_input_curr_lmt",
+        "platform_class_buckchg_ops_set_input_volt_lmt",
+        "platform_class_buckchg_ops_set_lpd_control",
+        "platform_class_buckchg_ops_set_lpd_sbu1",
+        "platform_class_buckchg_ops_set_lpd_uart_control",
+        "platform_class_buckchg_ops_set_opt_fws",
+        "platform_class_buckchg_ops_set_otg",
+        "platform_class_buckchg_ops_set_otg_curr",
+        "platform_class_buckchg_ops_set_otg_volt",
+        "platform_class_buckchg_ops_set_prechg_curr",
+        "platform_class_buckchg_ops_set_prechg_volt",
+        "platform_class_buckchg_ops_set_qc3_volt",
+        "platform_class_buckchg_ops_set_qc_volt",
+        "platform_class_buckchg_ops_set_rerun_aicl",
+        "platform_class_buckchg_ops_set_ship_mode",
+        "platform_class_buckchg_ops_set_term",
+        "platform_class_buckchg_ops_set_term_curr",
+        "platform_class_buckchg_ops_set_term_volt",
+        "platform_class_buckchg_ops_set_usb_aicl_cont_thd",
+        "platform_class_buckchg_ops_set_wd_timeout",
+        "platform_class_buckchg_ops_set_wls_hiz",
+        "platform_class_buckchg_ops_set_wls_input_curr_lmt",
+        "platform_class_buckchg_ops_set_wls_vdd_flag",
+        "platform_class_buckchg_ops_usb_adapter_allow_override"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_cp_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_cp_class.ko",
+      "blob": "bd2f717eac16f46bf3a9a1bbd1bd685a517c84c9",
+      "sha256": "66a31a60025593c99341e480df2103f3648e75853b8b7481b0e87df58a45bb3c",
+      "exports": [
+        "platform_class_cp_device_init",
+        "platform_class_cp_dump_register",
+        "platform_class_cp_enable_acdrv_manual",
+        "platform_class_cp_enable_adc",
+        "platform_class_cp_enable_busucp",
+        "platform_class_cp_enable_ovpgate",
+        "platform_class_cp_enable_ovpgate_with_check",
+        "platform_class_cp_get_alarm_status",
+        "platform_class_cp_get_battery_current",
+        "platform_class_cp_get_battery_present",
+        "platform_class_cp_get_battery_temperature",
+        "platform_class_cp_get_battery_voltage",
+        "platform_class_cp_get_bus_current",
+        "platform_class_cp_get_bus_error_status",
+        "platform_class_cp_get_bus_temperature",
+        "platform_class_cp_get_bus_voltage",
+        "platform_class_cp_get_bypass_support",
+        "platform_class_cp_get_charging_enabled",
+        "platform_class_cp_get_chip_vendor",
+        "platform_class_cp_get_die_temperature",
+        "platform_class_cp_get_errorhl_stat",
+        "platform_class_cp_get_fault_status",
+        "platform_class_cp_get_fsw",
+        "platform_class_cp_get_fsw_step",
+        "platform_class_cp_get_ibus_delta",
+        "platform_class_cp_get_ibus_total",
+        "platform_class_cp_get_int_stat",
+        "platform_class_cp_get_mode",
+        "platform_class_cp_get_ovpgate_status",
+        "platform_class_cp_get_present",
+        "platform_class_cp_get_reg_status",
+        "platform_class_cp_get_tdie",
+        "platform_class_cp_get_usb_voltage",
+        "platform_class_cp_get_vbus_present",
+        "platform_class_cp_register_ops",
+        "platform_class_cp_set_charging_enable",
+        "platform_class_cp_set_default_fsw",
+        "platform_class_cp_set_fsw",
+        "platform_class_cp_set_mode",
+        "platform_class_cp_set_present"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_fg_ic_ops.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_fg_ic_ops.ko",
+      "blob": "c24a68feae55787ab04bf06646502b2d5be8f35b",
+      "sha256": "ed63a9131a0b22f3255083e511f179fe3046f8b69b8e1f2ccfdcedc861a9c042",
+      "exports": [
+        "platform_fg_ic_ops_register",
+        "platform_fg_ops_get_adapt_power",
+        "platform_fg_ops_get_aged_flag",
+        "platform_fg_ops_get_authentic",
+        "platform_fg_ops_get_batt_cell_info",
+        "platform_fg_ops_get_batt_info",
+        "platform_fg_ops_get_charge_status",
+        "platform_fg_ops_get_chg_vol",
+        "platform_fg_ops_get_chip_ok",
+        "platform_fg_ops_get_count_level1",
+        "platform_fg_ops_get_count_level2",
+        "platform_fg_ops_get_count_level3",
+        "platform_fg_ops_get_count_lowtemp",
+        "platform_fg_ops_get_curr",
+        "platform_fg_ops_get_cutoff_voltage",
+        "platform_fg_ops_get_cyclecount",
+        "platform_fg_ops_get_decimal",
+        "platform_fg_ops_get_decimal_rate",
+        "platform_fg_ops_get_device_name",
+        "platform_fg_ops_get_dod_count",
+        "platform_fg_ops_get_error_state",
+        "platform_fg_ops_get_fastcharge",
+        "platform_fg_ops_get_fcc",
+        "platform_fg_ops_get_full_design",
+        "platform_fg_ops_get_isc_alert_level",
+        "platform_fg_ops_get_raw_soc",
+        "platform_fg_ops_get_rm",
+        "platform_fg_ops_get_rsoc",
+        "platform_fg_ops_get_soa_alert_level",
+        "platform_fg_ops_get_soc",
+        "platform_fg_ops_get_soh",
+        "platform_fg_ops_get_temp",
+        "platform_fg_ops_get_temp_max",
+        "platform_fg_ops_get_temp_min",
+        "platform_fg_ops_get_time_ot",
+        "platform_fg_ops_get_tte",
+        "platform_fg_ops_get_ttf",
+        "platform_fg_ops_get_verify_digest",
+        "platform_fg_ops_get_volt",
+        "platform_fg_ops_probe_ok",
+        "platform_fg_ops_set_authentic",
+        "platform_fg_ops_set_clear_count_data",
+        "platform_fg_ops_set_cutoff_voltage",
+        "platform_fg_ops_set_fastcharge",
+        "platform_fg_ops_set_force_report_full",
+        "platform_fg_ops_set_iterm",
+        "platform_fg_ops_set_temp",
+        "platform_fg_ops_set_verify_digest",
+        "platform_fg_ops_update_fw"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_platform_wireless_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_platform_wireless_class.ko",
+      "blob": "fb9572e6a3b79d72369723647ccf7c557fa11948",
+      "sha256": "1bb0211f89b3162e594e311c8f4de3652bd36128459e1b69c83c52fcd8076e11",
+      "exports": [
+        "platform_class_wireless_check_firmware_state",
+        "platform_class_wireless_check_i2c_is_ok",
+        "platform_class_wireless_do_renego",
+        "platform_class_wireless_download_fw",
+        "platform_class_wireless_download_fw_from_bin",
+        "platform_class_wireless_enable_rev_fod",
+        "platform_class_wireless_enable_reverse_chg",
+        "platform_class_wireless_enable_vsys_ctrl",
+        "platform_class_wireless_erase_fw",
+        "platform_class_wireless_get_auth_value",
+        "platform_class_wireless_get_debug_fod_type",
+        "platform_class_wireless_get_fw_version",
+        "platform_class_wireless_get_fw_version_check",
+        "platform_class_wireless_get_hall_gpio_status",
+        "platform_class_wireless_get_iout",
+        "platform_class_wireless_get_magnetic_case_flag",
+        "platform_class_wireless_get_poweroff_err_code",
+        "platform_class_wireless_get_project_vendor",
+        "platform_class_wireless_get_rx_err_code",
+        "platform_class_wireless_get_rx_fastcharge_status",
+        "platform_class_wireless_get_rx_int_flag",
+        "platform_class_wireless_get_rx_offset",
+        "platform_class_wireless_get_rx_power_mode",
+        "platform_class_wireless_get_rx_rtx_mode",
+        "platform_class_wireless_get_ss_voltage",
+        "platform_class_wireless_get_temp",
+        "platform_class_wireless_get_trx_isense",
+        "platform_class_wireless_get_trx_vrect",
+        "platform_class_wireless_get_tx_adapter",
+        "platform_class_wireless_get_tx_adapter_by_i2c",
+        "platform_class_wireless_get_tx_err_code",
+        "platform_class_wireless_get_tx_fan_speed",
+        "platform_class_wireless_get_tx_uuid",
+        "platform_class_wireless_get_vout",
+        "platform_class_wireless_get_vout_setted",
+        "platform_class_wireless_get_vrect",
+        "platform_class_wireless_is_car_adapter",
+        "platform_class_wireless_is_present",
+        "platform_class_wireless_process_factory_cmd",
+        "platform_class_wireless_receive_test_cmd",
+        "platform_class_wireless_receive_transparent_data",
+        "platform_class_wireless_register_ops",
+        "platform_class_wireless_send_transparent_data",
+        "platform_class_wireless_send_tx_q_value",
+        "platform_class_wireless_set_adapter_voltage",
+        "platform_class_wireless_set_confirm_data",
+        "platform_class_wireless_set_debug_fod",
+        "platform_class_wireless_set_debug_fod_params",
+        "platform_class_wireless_set_enable_mode",
+        "platform_class_wireless_set_fod_params",
+        "platform_class_wireless_set_fw_bin",
+        "platform_class_wireless_set_input_current_limit",
+        "platform_class_wireless_set_parallel_charge",
+        "platform_class_wireless_set_rx_offset",
+        "platform_class_wireless_set_rx_sleep_mode",
+        "platform_class_wireless_set_tx_fan_speed",
+        "platform_class_wireless_set_vout"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_protocol_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_protocol_class.ko",
+      "blob": "0a127923e2c9bbdedcc86f13e580e9a7d659143b",
+      "sha256": "06f91c02707255437488024d7109e4a4fd199a63669a9e7f5e860d0e8b2fbe67",
+      "exports": [
+        "protocol_class_det_adapter_type",
+        "protocol_class_get_adapter_info",
+        "protocol_class_get_adapter_max_power",
+        "protocol_class_get_adapter_power_cap",
+        "protocol_class_get_adapter_power_curve",
+        "protocol_class_get_adapter_pps_ptf",
+        "protocol_class_get_adapter_type",
+        "protocol_class_get_adapter_verified",
+        "protocol_class_get_adapter_volt_and_curr",
+        "protocol_class_register_ops",
+        "protocol_class_set_adapter_verified",
+        "protocol_class_set_adapter_volt_and_curr"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_protocol_pd_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_protocol_pd_class.ko",
+      "blob": "71d076eabcdab942ef45becc3ec9bf885c08f243",
+      "sha256": "d58cfbbfb35877421871d1c2c5615c5cada166d9dce9be790286ff64f152b247",
+      "exports": [
+        "protocol_class_pd_get_adapter_id",
+        "protocol_class_pd_get_adapter_svid",
+        "protocol_class_pd_get_cap",
+        "protocol_class_pd_get_cc_short_vbus",
+        "protocol_class_pd_get_cc_status",
+        "protocol_class_pd_get_cc_toggle",
+        "protocol_class_pd_get_cid_status",
+        "protocol_class_pd_get_current_state",
+        "protocol_class_pd_get_data_role",
+        "protocol_class_pd_get_has_dp",
+        "protocol_class_pd_get_pd_active",
+        "protocol_class_pd_get_pd_in_hard_reset",
+        "protocol_class_pd_get_pd_type",
+        "protocol_class_pd_get_pd_typec_accessory_mode",
+        "protocol_class_pd_get_pd_verifed",
+        "protocol_class_pd_get_pdos",
+        "protocol_class_pd_get_port_num",
+        "protocol_class_pd_get_power_role",
+        "protocol_class_pd_get_pps_apdo_max",
+        "protocol_class_pd_get_pps_max_cur",
+        "protocol_class_pd_get_pps_max_power",
+        "protocol_class_pd_get_pps_max_volt",
+        "protocol_class_pd_get_pps_min_volt",
+        "protocol_class_pd_get_pps_ptf",
+        "protocol_class_pd_get_pps_status",
+        "protocol_class_pd_get_snk_src_mode",
+        "protocol_class_pd_get_suspend_support_status",
+        "protocol_class_pd_get_typec_cc_orientation",
+        "protocol_class_pd_get_typec_mode",
+        "protocol_class_pd_get_usb_suspend_supported",
+        "protocol_class_pd_get_vdm_cmd",
+        "protocol_class_pd_get_verify_process",
+        "protocol_class_pd_get_zimi_cypress_flag",
+        "protocol_class_pd_register_ops",
+        "protocol_class_pd_request_vdm_cmd",
+        "protocol_class_pd_set_cc_toggle",
+        "protocol_class_pd_set_fixed_volt",
+        "protocol_class_pd_set_pd_active",
+        "protocol_class_pd_set_pd_in_hard_reset",
+        "protocol_class_pd_set_pd_typec_accessory_mode",
+        "protocol_class_pd_set_pd_verifed",
+        "protocol_class_pd_set_pps_apdo_max",
+        "protocol_class_pd_set_pps_max_cur",
+        "protocol_class_pd_set_pps_max_volt",
+        "protocol_class_pd_set_pps_min_volt",
+        "protocol_class_pd_set_pps_pdo_select",
+        "protocol_class_pd_set_typec_cc_orientation",
+        "protocol_class_pd_set_typec_mode",
+        "protocol_class_pd_set_usb_suspend_supported",
+        "protocol_class_pd_set_verify_process"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_protocol_qc_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_protocol_qc_class.ko",
+      "blob": "0378706985bc9331a83aa1b5c0346ac06bfaf4ba",
+      "sha256": "0abb038260d608235b702d6ab9e928972a43a35c8d449dd5a4b1ac832962496a",
+      "exports": [
+        "protocol_class_qc3_check_class_type",
+        "protocol_class_qc_get_qc_type",
+        "protocol_class_qc_register_ops",
+        "protocol_class_qc_set_volt",
+        "protocol_class_qc_set_volt_cmd"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_qcom_panel.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_qcom_panel.ko",
+      "blob": "f3446234f2a90e6dddb0ad899fa51977b46e6250",
+      "sha256": "12d47b9f33dbd89f4101f47cde881966a57bb507a0a93c9f893aa78652f7293c",
+      "exports": [
+        "mca_panel_get_hbm_state",
+        "mca_panel_get_screen_state"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_qcom_smem.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_qcom_smem.ko",
+      "blob": "b29e88843c35bee8769cea6392ec0cb75c273d20",
+      "sha256": "b9d8f93864f0ba2a2fef6db2426b1edd2b95aadd8959b784cbe34e15c80d833e",
+      "exports": [
+        "get_smem_battery_info"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_qcom_subpmic_proxy.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_qcom_subpmic_proxy.ko",
+      "blob": "5edb04e34f1cb07b88e99cf67af7f40490251e27",
+      "sha256": "60d1d0958ca9712911c2e2fc7163c7ec7aa3813dc7e5682f0b277f6249622ff2",
+      "exports": [
+        "pen_charge_state_notifier_register_client",
+        "pen_charge_state_notifier_unregister_client",
+        "qti_battery_charger_get_prop",
+        "register_hboost_event_notifier",
+        "unregister_hboost_event_notifier"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_qcom_sysfs.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_qcom_sysfs.ko",
+      "blob": "53bf43014151d32ee8eed64ae7c52b1d2533bfe3",
+      "sha256": "72a473be30bd3233ac9a0b2379ff26c1df72efcfb9678acd768af4b6fcb62cf7",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_quick_wireless.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_quick_wireless.ko",
+      "blob": "e8aee83c51632f04f81b28bdcfc7b1ceca1c5951",
+      "sha256": "a266b9b5e0e62d5dc7b0352140b23ef12afe1e2d98a54b16997f87447f3dd5eb",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_smart_charge.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_smart_charge.ko",
+      "blob": "7453488ca6a5f179215e0103b73c680262617cd2",
+      "sha256": "bd755be363f018479ab8c7eee3253d2678306a6efbde598a28519f04989c7d7b",
+      "exports": [
+        "mca_smartchg_get_board_temp",
+        "mca_smartchg_get_limit_soc",
+        "mca_smartchg_get_scene",
+        "mca_smartchg_if_ops_register",
+        "mca_smartchg_is_extreme_cold_enabled",
+        "mca_smartchg_set_board_temp",
+        "mca_smartchg_set_scene"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_soc_limit.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_soc_limit.ko",
+      "blob": "5ef7bb0c2f3713699d3898b118f1027c4ec19d4b",
+      "sha256": "aa7512d1ff44b904bb85d899fc56e635dcea559a7e1083948524591c87fc3d82",
+      "exports": [
+        "soc_limit_process"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_strategy_buckchg.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_strategy_buckchg.ko",
+      "blob": "ee6656d27a34bdb61cfb2ab3ca510b3198f27efd",
+      "sha256": "963b65b150be4ae5b550b3c598710e1a96c3a1b2a9873d33489de96a16a5cef4",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_strategy_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_strategy_class.ko",
+      "blob": "8f5b5ac0797f739cd1ab5303e4a696ff60edfd50",
+      "sha256": "f33fcc9c3d064a2d76cf92900d322dde9bc6ef845cdaf8da4c9cdbe04a78900d",
+      "exports": [
+        "mca_strategy_func_get_status",
+        "mca_strategy_func_process",
+        "mca_strategy_func_set_config",
+        "mca_strategy_ops_register"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_strategy_fg_class.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_strategy_fg_class.ko",
+      "blob": "6841faf03689463ece0e649e381595aa675cfee4",
+      "sha256": "f06a1b5d18be2efabe1804bba8b7a02aacab3a580d98738627d74678b17fbad4",
+      "exports": [
+        "strategy_class_fg_get_authentic",
+        "strategy_class_fg_get_dc",
+        "strategy_class_fg_get_fastcharge",
+        "strategy_class_fg_get_fcc",
+        "strategy_class_fg_get_health",
+        "strategy_class_fg_get_model_name",
+        "strategy_class_fg_get_rm",
+        "strategy_class_fg_get_voltage_mean",
+        "strategy_class_fg_is_chip_ok",
+        "strategy_class_fg_ops_get_charging_done",
+        "strategy_class_fg_ops_get_current",
+        "strategy_class_fg_ops_get_cyclecount",
+        "strategy_class_fg_ops_get_rsoc",
+        "strategy_class_fg_ops_get_soc",
+        "strategy_class_fg_ops_get_soc_decimal",
+        "strategy_class_fg_ops_get_temperature",
+        "strategy_class_fg_ops_get_voltage",
+        "strategy_class_fg_ops_is_init_ok",
+        "strategy_class_fg_ops_register",
+        "strategy_class_fg_ops_set_charging_done",
+        "strategy_class_fg_set_fastcharge"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_strategy_fg_comp.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_strategy_fg_comp.ko",
+      "blob": "9cc424bd3721390386caf57130add02acd35c57d",
+      "sha256": "6b52983aad72b3cc208bae44aebf2607dca31a77015ea339a5f15157b41ebf8d",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_strategy_quickchg.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_strategy_quickchg.ko",
+      "blob": "6083c58a9f8c5a156d1e64c5737575b713d21301",
+      "sha256": "de37c933b17932b9ebf6d9b4fe6faba8e7f0032eac541dc8634975a16b030be1",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_sysfs.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_sysfs.ko",
+      "blob": "40b2ebdb3dc6106d07a172659a2296c93191bc12",
+      "sha256": "83ad8810837c615a53a926d0365bb07d846fafa754ed18191749425cba9da45a",
+      "exports": [
+        "mca_debugfs_create_group",
+        "mca_sysfs_create_files",
+        "mca_sysfs_create_group",
+        "mca_sysfs_create_link_group",
+        "mca_sysfs_init_attrs",
+        "mca_sysfs_lookup_attr",
+        "mca_sysfs_remove_group",
+        "mca_sysfs_remove_link_group"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_vbat_ovp_monitor.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_vbat_ovp_monitor.ko",
+      "blob": "f70f2ecf9505c74b95e29ce55e33e57b54b7959b",
+      "sha256": "e58428ed5d8723a9597ed8eb772d6bbce3efbcc7b5d9c82fd6458ee6458a377e",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "mca_wireless_revchg.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_wireless_revchg.ko",
+      "blob": "aa915a2f8ab0fdd865aca47671176747414a79de",
+      "sha256": "1c9e22c7830ba371634b07c856097498e5d2a18342a9de3157da711ff8f45a42",
+      "exports": [
+        "mca_wireless_rev_enable_reverse_charge",
+        "mca_wireless_rev_get_firmware_state",
+        "mca_wireless_rev_get_fw_update",
+        "mca_wireless_rev_get_rev_boost_default",
+        "mca_wireless_rev_get_reverse_chg",
+        "mca_wireless_rev_get_reverse_chg_state",
+        "mca_wireless_rev_get_user_reverse_chg",
+        "mca_wireless_rev_set_firmware_state",
+        "mca_wireless_rev_set_reverse_chg",
+        "mca_wireless_rev_set_usb_plugin",
+        "mca_wireless_rev_set_user_reverse_chg",
+        "mca_wireless_rev_set_wired_chg_ok",
+        "mca_wireless_rev_update_fw_version"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "mca_workqueue.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/mca_workqueue.ko",
+      "blob": "5da8f1036f09069fcb15dd45a8a03edf36048b53",
+      "sha256": "426031fe14b412db553104e887127e01a2659be1f0cdedc40a5e51b17f413852",
+      "exports": [
+        "mca_cancel_delayed_work",
+        "mca_cancel_work",
+        "mca_mod_delayed_work",
+        "mca_queue_delayed_work",
+        "mca_queue_work"
+      ],
+      "aliases": []
+    },
+    {
+      "name": "nuvolta_1652.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/nuvolta_1652.ko",
+      "blob": "d9c52dd6453dbd112536daab12e1a8dea625aa21",
+      "sha256": "f8ca88a857fa5655d450a23de504a9956fffb497afa712f1b55f97e26358259b",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "qcom_adsp_pd_protocol.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/qcom_adsp_pd_protocol.ko",
+      "blob": "4ec11005bebfc23c2e5f92f29caff377fe0aa3c8",
+      "sha256": "a68de08ccb41a392aa2562926bac37d1133a661588a91dba6cb9597cc02b41cd",
+      "exports": [],
+      "aliases": []
+    },
+    {
+      "name": "sc8581.ko",
+      "path": "vendor_boot/ramdisk/lib/modules/sc8581.ko",
+      "blob": "a896e6a4af141d7e876787f80f2c9b0bcb6e2671",
+      "sha256": "8d125aa78b9f5c08b0741a409fac0920ad4328a7e21710050b9a99dceb800c1f",
+      "exports": [],
+      "aliases": [
+        "of:N*T*Csc8581",
+        "of:N*T*Csc8581C*",
+        "of:N*T*Csc8585_master",
+        "of:N*T*Csc8585_masterC*",
+        "of:N*T*Csc8585_slave",
+        "of:N*T*Csc8585_slaveC*"
+      ]
+    }
+  ],
+  "wire": [
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_usb_real_type",
+      "op": "read",
+      "property": 131084,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_usb_real_type"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_qc_volt",
+      "op": "read",
+      "property": 131074,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_qc_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_qc_volt",
+      "op": "write",
+      "property": 8208,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_qc_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_qc_volt_cmd",
+      "op": "write",
+      "property": 8219,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_qc_volt_cmd"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_bus_volt",
+      "op": "read",
+      "property": 131074,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_bus_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "op": "read",
+      "property": 131073,
+      "size": 4,
+      "built_function": "qcom_subpmic_update_usb_type_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "op": "read",
+      "property": 131084,
+      "size": 4,
+      "built_function": "qcom_subpmic_update_usb_type_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_sync_cfg_work",
+      "op": "write",
+      "property": 8218,
+      "size": 1,
+      "built_function": "qcom_subpmic_sync_cfg_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_sync_cfg_work",
+      "op": "write",
+      "property": 8216,
+      "size": 16,
+      "built_function": "qcom_subpmic_sync_cfg_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_sync_cfg_work",
+      "op": "write",
+      "property": 8217,
+      "size": 4,
+      "built_function": "qcom_subpmic_sync_cfg_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_sync_cfg_work",
+      "op": "write",
+      "property": 8229,
+      "size": 1,
+      "built_function": "qcom_subpmic_sync_cfg_work"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_ship_mode",
+      "op": "write",
+      "property": 5,
+      "size": 8,
+      "built_function": "qcom_subpmic_ship_mode"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_shutdown_cb",
+      "op": "write",
+      "property": 6,
+      "size": 8,
+      "built_function": "qcom_subpmic_shutdown_cb"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_is_charge_done",
+      "op": "read",
+      "property": 8193,
+      "size": 4,
+      "built_function": "qcom_subpmic_is_charge_done"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_input_current_limit",
+      "op": "read",
+      "property": 8199,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_input_current_limit"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_bus_curr",
+      "op": "read",
+      "property": 131076,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_bus_curr"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_usb_sns_volt",
+      "op": "read",
+      "property": 131075,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_usb_sns_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_vsys_volt",
+      "op": "read",
+      "property": 8203,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_vsys_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_chg_status",
+      "op": "read",
+      "property": 8193,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_chg_status"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_chg_type",
+      "op": "read",
+      "property": 8194,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_chg_type"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_otg_status",
+      "op": "read",
+      "property": 8204,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_otg_status"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_term_current",
+      "op": "read",
+      "property": 8197,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_term_current"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_term_volt",
+      "op": "read",
+      "property": 8198,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_term_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_wls_curr",
+      "op": "read",
+      "property": 4103,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_wls_curr"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_input_suspend",
+      "op": "write",
+      "property": 8215,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_input_suspend"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_wireless_input_suspend",
+      "op": "write",
+      "property": 4100,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_wireless_input_suspend"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_input_current_limit",
+      "op": "write",
+      "property": 8199,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_input_current_limit"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_wls_input_current_limit",
+      "op": "write",
+      "property": 4099,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_wls_input_current_limit"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_input_volt_limit",
+      "op": "write",
+      "property": 8200,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_input_volt_limit"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_charge_current",
+      "op": "write",
+      "property": 8196,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_charge_current"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_enable_charging",
+      "op": "write",
+      "property": 8195,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_enable_charging"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_term_current",
+      "op": "write",
+      "property": 8197,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_term_current"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_term_volt",
+      "op": "write",
+      "property": 8198,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_term_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_prechg_volt",
+      "op": "write",
+      "property": 8202,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_prechg_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_prechg_current",
+      "op": "write",
+      "property": 8201,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_prechg_current"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_usb_aicl_cont_thd",
+      "op": "write",
+      "property": 8211,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_usb_aicl_cont_thd"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_usb_aicl_cont_thd",
+      "op": "read",
+      "property": 8211,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_usb_aicl_cont_thd"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_opt_fws",
+      "op": "write",
+      "property": 8212,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_opt_fws"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_usb_adapter_allow_override",
+      "op": "write",
+      "property": 8213,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_usb_adapter_allow_override"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_qc3_volt",
+      "op": "write",
+      "property": 8214,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_qc3_volt"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_otg_plugin_status",
+      "op": "read",
+      "property": 8205,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_otg_plugin_status"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_otg_enable_status",
+      "op": "read",
+      "property": 8204,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_otg_enable_status"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_boost_enable",
+      "op": "write",
+      "property": 8206,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_boost_enable"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_boost_voltage",
+      "op": "write",
+      "property": 8207,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_boost_voltage"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_aicl_enable",
+      "op": "write",
+      "property": 8209,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_aicl_enable"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_rerun_aicl",
+      "op": "write",
+      "property": 8210,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_rerun_aicl"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_wls_vdd_flag",
+      "op": "write",
+      "property": 4108,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_wls_vdd_flag"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_enable",
+      "op": "read",
+      "property": 131081,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_enable"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_status",
+      "op": "read",
+      "property": 131082,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_status"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_sbu1",
+      "op": "read",
+      "property": 8220,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_sbu1"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_sbu2",
+      "op": "read",
+      "property": 8221,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_sbu2"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_cc1",
+      "op": "read",
+      "property": 8222,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_cc1"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_cc2",
+      "op": "read",
+      "property": 8223,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_cc2"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_dp",
+      "op": "read",
+      "property": 8224,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_dp"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_dm",
+      "op": "read",
+      "property": 8225,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_dm"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_lpd_sbu1",
+      "op": "write",
+      "property": 8220,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_lpd_sbu1"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_lpd_control",
+      "op": "write",
+      "property": 8226,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_lpd_control"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_control",
+      "op": "read",
+      "property": 8226,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_control"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_lpd_uart_control",
+      "op": "write",
+      "property": 8227,
+      "size": 4,
+      "built_function": "qcom_subpmic_set_lpd_uart_control"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_lpd_uart_control",
+      "op": "read",
+      "property": 8227,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_lpd_uart_control"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_get_pack_vbat",
+      "op": "read",
+      "property": 8228,
+      "size": 4,
+      "built_function": "qcom_subpmic_get_pack_vbat"
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_set_eu_model",
+      "op": "write",
+      "property": 8229,
+      "size": 1,
+      "built_function": "qcom_subpmic_set_eu_model"
+    },
+    {
+      "module": "nuvolta_1652.ko",
+      "function": "nuvolta_1652_set_input_current_limit",
+      "op": "write",
+      "property": 4099,
+      "size": 4,
+      "built_function": "nuvolta_1652_set_input_current_limit"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pps_max_power",
+      "op": "write",
+      "property": 135195,
+      "size": 4,
+      "built_function": "adsp_pd_get_pps_max_power"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_select_pps_pdo",
+      "op": "write",
+      "property": 135191,
+      "size": 4,
+      "built_function": "adsp_pd_select_pps_pdo"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pps_ptf",
+      "op": "read",
+      "property": 135204,
+      "size": 4,
+      "built_function": "adsp_pd_get_pps_ptf"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_set_fixed_pd_volt",
+      "op": "write",
+      "property": 135192,
+      "size": 4,
+      "built_function": "adsp_pd_set_fixed_volt"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pps_max_cur",
+      "op": "read",
+      "property": 135187,
+      "size": 4,
+      "built_function": "adsp_pd_get_pps_max_cur"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pps_status",
+      "op": "read",
+      "property": 135193,
+      "size": 4,
+      "built_function": "adsp_pd_get_pps_status"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pps_apdo_max",
+      "op": "read",
+      "property": 135188,
+      "size": 4,
+      "built_function": "adsp_pd_get_apdo_max"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pd_type",
+      "op": "read",
+      "property": 131084,
+      "size": 4,
+      "built_function": "adsp_pd_get_type"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_typec_mode",
+      "op": "read",
+      "property": 135189,
+      "size": 4,
+      "built_function": "adsp_pd_get_typec_mode"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_typec_cc_orientation",
+      "op": "read",
+      "property": 135190,
+      "size": 4,
+      "built_function": "adsp_pd_get_cc_orientation"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_adapter_id",
+      "op": "read",
+      "property": 135182,
+      "size": 4,
+      "built_function": "adsp_pd_get_adapter_id"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_adapter_svid",
+      "op": "read",
+      "property": 135183,
+      "size": 4,
+      "built_function": "adsp_pd_get_adapter_svid"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_has_dp",
+      "op": "read",
+      "property": 135198,
+      "size": 1,
+      "built_function": "adsp_pd_get_has_dp"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_data_role",
+      "op": "read",
+      "property": 135180,
+      "size": 4,
+      "built_function": "adsp_pd_get_data_role"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_current_state",
+      "op": "read",
+      "property": 135181,
+      "size": 4,
+      "built_function": "adsp_pd_get_current_state"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_pdos",
+      "op": "read",
+      "property": 135185,
+      "size": null,
+      "built_function": "adsp_pd_get_pdos"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_set_verify_process",
+      "op": "write",
+      "property": 135170,
+      "size": 4,
+      "built_function": "adsp_pd_set_verify_process"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_verify_process",
+      "op": "read",
+      "property": 135170,
+      "size": 4,
+      "built_function": "adsp_pd_get_verify_process"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_set_pd_verifed",
+      "op": "write",
+      "property": 135184,
+      "size": 4,
+      "built_function": "adsp_pd_set_verified"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_cid_status",
+      "op": "read",
+      "property": 135199,
+      "size": 1,
+      "built_function": "adsp_pd_get_cid"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_protocol_set_cc_toggle",
+      "op": "write",
+      "property": 135200,
+      "size": 1,
+      "built_function": "adsp_pd_set_cc_toggle"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_protocol_get_cc_toggle",
+      "op": "read",
+      "property": 135200,
+      "size": 1,
+      "built_function": "adsp_pd_get_cc_toggle"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_snk_src_mode",
+      "op": "read",
+      "property": 135201,
+      "size": 4,
+      "built_function": "adsp_pd_get_snk_src_mode"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_protocol_get_cc_status",
+      "op": "read",
+      "property": 135202,
+      "size": 1,
+      "built_function": "adsp_pd_get_cc_status"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_protocol_get_cc_short_vbus",
+      "op": "read",
+      "property": 135203,
+      "size": 4,
+      "built_function": "adsp_pd_get_cc_short_vbus"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_suspend_support_status",
+      "op": "read",
+      "property": 135205,
+      "size": 1,
+      "built_function": "adsp_pd_get_suspend_support"
+    },
+    {
+      "module": "qcom_adsp_pd_protocol.ko",
+      "function": "adsp_pd_protocol_get_zimi_cypress_flag",
+      "op": "read",
+      "property": 135206,
+      "size": 4,
+      "built_function": "adsp_pd_get_zimi_cypress"
+    }
+  ],
+  "events": [
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_glink_down_cb",
+      "built_function": "qcom_subpmic_glink_down_cb",
+      "type": 5,
+      "event": 42
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_sync_cb",
+      "built_function": "qcom_subpmic_sync_cb",
+      "type": 5,
+      "event": 43
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "built_function": "qcom_subpmic_update_usb_type_work",
+      "type": 4,
+      "event": 39
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "built_function": "qcom_subpmic_update_usb_type_work",
+      "type": 0,
+      "event": 0
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "built_function": "qcom_subpmic_update_usb_type_work",
+      "type": 0,
+      "event": 1
+    },
+    {
+      "module": "mca_qcom_subpmic_proxy.ko",
+      "function": "qcom_subpmic_update_usb_type_work",
+      "built_function": "qcom_subpmic_update_usb_type_work",
+      "type": 1,
+      "event": 5
+    }
+  ],
+  "firmware": [
+    {
+      "symbol": "fw_data_1652",
+      "size": 65536,
+      "sha256": "aa92d54667e321ba2e370716ae87be3282a8a2859ae41916b86daa73e8c706c7",
+      "images": [
+        "7b4e542ecb336c8e6ba2ff541d571c831e8f22244b0980122f6f9333cae646ed",
+        "97b5028f1d8ab697811d2a5c6d1343fd20d547758867657fb409fbbfed201f15"
+      ]
+    },
+    {
+      "symbol": "fw_data_1661",
+      "size": 32768,
+      "sha256": "af76c3e99b23bea8dc6b17405d181932da46a56a0920bc09632dbad82bb7faa8",
+      "images": [
+        "af76c3e99b23bea8dc6b17405d181932da46a56a0920bc09632dbad82bb7faa8"
+      ]
+    },
+    {
+      "symbol": "fw_data_1665",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "images": []
+    }
+  ]
+}
