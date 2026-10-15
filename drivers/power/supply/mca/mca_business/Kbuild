@@ -1,0 +1,2 @@
+obj-$(CONFIG_XM_POWER_SUPPLY) += business_battery/
+obj-$(CONFIG_XM_POWER_SUPPLY) += business_misc/
