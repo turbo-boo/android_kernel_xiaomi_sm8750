@@ -19,6 +19,9 @@ config MCA_EXTERNAL_CP
 config MCA_EXTERNAL_WIRELESS
 	tristate "MCA external wireless charging IC support"
 
+config MCA_EXTERNAL_LOADSWITCH
+	tristate "MCA external load switch IC support"
+
 config MCA_EXTERNAL_BOOST
 	tristate "MCA external boost IC support"
 
@@ -28,10 +31,16 @@ config MCA_QCOM_SUBPMIC
 config MCA_QCOM_ADSP
 	tristate "MCA Qualcomm ADSP glink support"
 
+config MCA_QCOM_SYSFS
+	tristate "MCA Qualcomm sysfs support"
+
 config MCA_QCOM_SMEM
 	tristate "MCA Qualcomm shared memory support"
 
 config MCA_QCOM_PANEL
 	tristate "MCA Qualcomm panel notifier support"
+
+config MCA_UT_TEST
+	tristate "MCA unit test module"
 
 endif # XM_POWER_SUPPLY
