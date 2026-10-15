@@ -8,3 +8,4 @@ obj-$(CONFIG_XM_POWER_SUPPLY) += mca_protocol/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_strategy/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_smart_charge/
 obj-$(CONFIG_XM_POWER_SUPPLY) += mca_hardware_ic/
+obj-$(CONFIG_MCA_QCOM_SUBPMIC) += mca_qcom_subpmic_proxy/

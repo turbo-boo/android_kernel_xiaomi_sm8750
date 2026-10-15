@@ -22,6 +22,9 @@ config MCA_EXTERNAL_WIRELESS
 config MCA_EXTERNAL_BOOST
 	tristate "MCA external boost IC support"
 
+config MCA_QCOM_SUBPMIC
+	tristate "MCA Qualcomm sub-PMIC proxy support"
+
 config MCA_QCOM_ADSP
 	tristate "MCA Qualcomm ADSP glink support"
 
