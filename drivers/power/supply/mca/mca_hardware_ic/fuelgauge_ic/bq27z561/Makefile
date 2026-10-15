@@ -1,0 +1,1 @@
+obj-$(CONFIG_MCA_EXTERNAL_FG) += bq27z561.o
