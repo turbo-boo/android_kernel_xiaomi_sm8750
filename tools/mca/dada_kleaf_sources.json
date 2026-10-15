@@ -1,0 +1,213 @@
+{
+  "common_tag": "android15-6.6-2024-07_r59",
+  "clang": "r510928",
+  "rust": "1.73.0b",
+  "kmi_generation": 8,
+  "projects": [
+    {
+      "path": "build/bazel_common_rules",
+      "url": "https://android.googlesource.com/platform/build/bazel_common_rules",
+      "sha": "9530bee133971f25758a2e1085755200999ca1bf"
+    },
+    {
+      "path": "build/kernel",
+      "url": "https://github.com/MiCode/kernel_build.git",
+      "sha": "a3badf24a0758bf7517cb62ce22b58a7af022d2f"
+    },
+    {
+      "path": "common",
+      "url": "https://android.googlesource.com/kernel/common",
+      "sha": "c5bb31908c12dfded18679d8b4a6633c1c073bce"
+    },
+    {
+      "path": "common-modules/virtual-device",
+      "url": "https://android.googlesource.com/kernel/common-modules/virtual-device",
+      "sha": "94e52d00fd4e9921efbad3c4b5f424f90b57dfce"
+    },
+    {
+      "path": "external/bazel-skylib",
+      "url": "https://android.googlesource.com/platform/external/bazel-skylib",
+      "sha": "6b103c40d8113f001475d5e13672922ef2aa0e5a"
+    },
+    {
+      "path": "external/bazelbuild-apple_support",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-apple_support",
+      "sha": "f6003e1e3763f8aad9fb9acae79cfa5fff9ae988"
+    },
+    {
+      "path": "external/bazelbuild-bazel-central-registry",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-bazel-central-registry",
+      "sha": "7018452ffac4fc070b29d5c5c872bac3c746a06a"
+    },
+    {
+      "path": "external/bazelbuild-platforms",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-platforms",
+      "sha": "04d937168075c80205c96f31752000e9de759adb"
+    },
+    {
+      "path": "external/bazelbuild-rules_cc",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-rules_cc",
+      "sha": "5d626dcf48e0e97933b48456a86966971799c9e9"
+    },
+    {
+      "path": "external/bazelbuild-rules_java",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-rules_java",
+      "sha": "8e548c7053dffd1717d565f0409a88992f401da1"
+    },
+    {
+      "path": "external/bazelbuild-rules_license",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-rules_license",
+      "sha": "f578df4fd057ffe2023728444759535685631548"
+    },
+    {
+      "path": "external/bazelbuild-rules_pkg",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-rules_pkg",
+      "sha": "f91631bcb97956f7bdf4cdf7523d5d2e63f85b5c"
+    },
+    {
+      "path": "external/bazelbuild-rules_python",
+      "url": "https://android.googlesource.com/platform/external/bazelbuild-rules_python",
+      "sha": "f71847ac898655b67634bb14e77a7408c4fb5e00"
+    },
+    {
+      "path": "external/libcap",
+      "url": "https://android.googlesource.com/platform/external/libcap",
+      "sha": "8729338c078737da57a8b63ee88016799dfb4cdb"
+    },
+    {
+      "path": "external/libcap-ng",
+      "url": "https://android.googlesource.com/platform/external/libcap-ng",
+      "sha": "2bcc92ae19481dd2b8d3ce3abdfbbee49261abe6"
+    },
+    {
+      "path": "external/lz4",
+      "url": "https://android.googlesource.com/platform/external/lz4",
+      "sha": "124599333514066524f55f5f41fbf0d46212e598"
+    },
+    {
+      "path": "external/pigz",
+      "url": "https://android.googlesource.com/platform/external/pigz",
+      "sha": "9bc9fa17d499ddde88b77820f6d063e16c0cdd42"
+    },
+    {
+      "path": "external/python/absl-py",
+      "url": "https://android.googlesource.com/platform/external/python/absl-py",
+      "sha": "9ae5a78fc57c3cd539398373ae39601a8b923e62"
+    },
+    {
+      "path": "external/toybox",
+      "url": "https://android.googlesource.com/platform/external/toybox",
+      "sha": "91f90361fc563025e6d152d68d2072109500d602"
+    },
+    {
+      "path": "external/zlib",
+      "url": "https://android.googlesource.com/platform/external/zlib",
+      "sha": "b34cd2e4371556e913ad9801a924a891c74d1463"
+    },
+    {
+      "path": "external/zopfli",
+      "url": "https://android.googlesource.com/platform/external/zopfli",
+      "sha": "36c79f00e5229800d2aaa13fc42c301ec8ef1153"
+    },
+    {
+      "path": "kernel/configs",
+      "url": "https://android.googlesource.com/kernel/configs",
+      "sha": "bd79f38685cf939ab836dd8ddd2e01506ccff47a"
+    },
+    {
+      "path": "kernel/tests",
+      "url": "https://android.googlesource.com/kernel/tests",
+      "sha": "7b2005bacbf91c5c494abded85b3c7fea88862a8"
+    },
+    {
+      "path": "prebuilts/asuite",
+      "url": "https://android.googlesource.com/platform/prebuilts/asuite",
+      "sha": "d90d0060aedfd80f2119c1db5339a093f2758926"
+    },
+    {
+      "path": "prebuilts/build-tools",
+      "url": "https://android.googlesource.com/platform/prebuilts/build-tools",
+      "sha": "bfa65e7422cc88dc64ef3ca224daf214a77fb4d5"
+    },
+    {
+      "path": "prebuilts/clang-tools",
+      "url": "https://android.googlesource.com/platform/prebuilts/clang-tools",
+      "sha": "1634c6a556d1f2c24897bf74156c6449486e8941"
+    },
+    {
+      "path": "prebuilts/clang/host/linux-x86",
+      "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86",
+      "sha": "62dc563017359bca29c4a08f5f27d8ecae763462"
+    },
+    {
+      "path": "prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8",
+      "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8",
+      "sha": "739d8a41b6096d384338a62995a04739aff8693d"
+    },
+    {
+      "path": "prebuilts/jdk/jdk11",
+      "url": "https://android.googlesource.com/platform/prebuilts/jdk/jdk11",
+      "sha": "c6c90521b7c317f13d41bbd9336a8d45ee202cec"
+    },
+    {
+      "path": "prebuilts/kernel-build-tools",
+      "url": "https://android.googlesource.com/kernel/prebuilts/build-tools",
+      "sha": "b46264b70e3cdf70d08c9ae2df6ea3002b242ebc"
+    },
+    {
+      "path": "prebuilts/ndk-r26",
+      "url": "https://android.googlesource.com/toolchain/prebuilts/ndk/r26",
+      "sha": "abad5cbde7eb9684e37d7569810743a8a34826af"
+    },
+    {
+      "path": "prebuilts/rust",
+      "url": "https://android.googlesource.com/platform/prebuilts/rust",
+      "sha": "442511af884f074018466f85b4daadd4b0ac0050"
+    },
+    {
+      "path": "prebuilts/tradefed",
+      "url": "https://android.googlesource.com/platform/tools/tradefederation/prebuilts",
+      "sha": "52121d9a4653ff92b9bd225bd417b6a288c36b58"
+    },
+    {
+      "path": "qcom/opensource/devicetree",
+      "url": "https://github.com/MiCode/kernel_devicetree.git",
+      "sha": "233bd52eddce9f081f8e87802796f5994babafa5"
+    },
+    {
+      "path": "tools/mkbootimg",
+      "url": "https://android.googlesource.com/platform/system/tools/mkbootimg",
+      "sha": "f5c284e8998dd8a085cf027bb518b6c2b84cf744"
+    },
+    {
+      "path": "vendor/qcom/opensource/camera-kernel",
+      "url": "https://github.com/MiCode/vendor_qcom_opensource_camera-kernel.git",
+      "sha": "7d5ed0c4ce81aaff65a82c58eddce3de7c45c088"
+    },
+    {
+      "path": "vendor/qcom/opensource/display-devicetree",
+      "url": "https://github.com/MiCode/vendor_qcom_opensource_display-devicetree.git",
+      "sha": "024e600389c28f2190f2e0e05cd353a9e8ed8ccb"
+    },
+    {
+      "path": "vendor/qcom/opensource/display-drivers",
+      "url": "https://github.com/MiCode/vendor_opensource_display-drivers.git",
+      "sha": "edef4355ea99e442683a28609e16a51c6d3b3212"
+    },
+    {
+      "path": "vendor/qcom/opensource/wlan",
+      "url": "https://github.com/MiCode/vendor_qcom_opensource_wlan.git",
+      "sha": "0e5909a09a43e4d86f82d7ef9dbde2541b4b61c4"
+    },
+    {
+      "path": "vendor/qcom/proprietary/display-devicetree",
+      "url": "https://github.com/MiCode/vendor_qcom_proprietary_display-devicetree.git",
+      "sha": "1226b18034e94f6bbeb17b2f29f0fd566b4139e7"
+    },
+    {
+      "path": "vendor/xiaomi/proprietary/touch-driver",
+      "url": "https://github.com/MiCode/vendor_xiaomi_proprietary_touch-driver.git",
+      "sha": "e02de97c3329367b76201086c9e9b8d995ec809b"
+    }
+  ]
+}
