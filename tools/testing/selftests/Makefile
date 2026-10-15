@@ -42,6 +42,7 @@ TARGETS += landlock
 TARGETS += lib
 TARGETS += livepatch
 TARGETS += lkdtm
+TARGETS += mca
 TARGETS += membarrier
 TARGETS += memfd
 TARGETS += memory-hotplug
