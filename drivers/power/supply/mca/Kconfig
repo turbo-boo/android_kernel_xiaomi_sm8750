@@ -4,6 +4,9 @@
 
 if XM_POWER_SUPPLY
 
+config MCA_PROTOCOL_PD
+	tristate "MCA USB Power Delivery protocol support"
+
 config MCA_PROTOCOL_QC
 	tristate "MCA Qualcomm QuickCharge protocol support"
 
