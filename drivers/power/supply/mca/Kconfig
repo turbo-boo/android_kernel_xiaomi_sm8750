@@ -1,0 +1,7 @@
+# Xiaomi Multi Charge Architecture (MCA)
+# XM_POWER_SUPPLY and CHARGER_PARTITION are declared by the Dada
+# power-supply Kconfig; this file restores the MCA-specific symbols.
+
+if XM_POWER_SUPPLY
+
+endif # XM_POWER_SUPPLY
