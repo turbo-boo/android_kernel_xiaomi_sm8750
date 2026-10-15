@@ -1,0 +1,1 @@
+obj-$(CONFIG_MCA_EXTERNAL_BOOST) += hl7603/

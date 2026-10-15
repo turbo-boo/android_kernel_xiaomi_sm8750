@@ -10,6 +10,9 @@ config MCA_PROTOCOL_PD
 config MCA_PROTOCOL_QC
 	tristate "MCA Qualcomm QuickCharge protocol support"
 
+config MCA_EXTERNAL_BOOST
+	tristate "MCA external boost IC support"
+
 config MCA_QCOM_ADSP
 	tristate "MCA Qualcomm ADSP glink support"
 
